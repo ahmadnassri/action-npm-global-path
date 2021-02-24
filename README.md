@@ -33,7 +33,7 @@ jobs:
             ~/.my-npm-stuff
             node_modules
 
-      - uses: ahmadnassri/action-npm-global-path
+      - uses: ahmadnassri/action-npm-global-path@v1
         with:
           path: ~/.my-npm-stuff
 ```
