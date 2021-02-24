@@ -1,0 +1,8 @@
+version: 2.0
+
+id: action-npm-global-path
+
+about:
+  title: npm Global Path
+  description: configure GitHub Actions to work with npm --global
+  repository: ahmadnassri/action-npm-global-path

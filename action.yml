@@ -1,0 +1,24 @@
+name: npm Global Path
+description: configure GitHub Actions to work with npm --global
+
+branding:
+  icon: package
+  color: red
+
+inputs:
+  path:
+    description: root path to use
+    default: ~/.npm
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: |
+        mkdir -p ${{ inputs.path }}/packages
+        mkdir -p ${{ inputs.path }}/cache
+
+        npm config set prefix ${{ inputs.path }}/packages
+        npm config set cache ${{ inputs.path }}/cache
+
+        echo "$(npm --global bin)" >> $GITHUB_PATH
